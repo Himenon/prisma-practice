@@ -13,7 +13,7 @@ pnpm add prisma
 pnpm dlx prisma init
 
 # Create Prisma Clent Code
-pnpm dlx prisma
+pnpm dlx prisma generate
 ```
 
 ## Development
