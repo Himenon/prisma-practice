@@ -51,6 +51,18 @@ $ pnpm run build
 $ docker build --no-cache -t ghcr.io/himenon/prisma-practice .
 ```
 
+Check Docker Run
+
+```bash
+docker run \
+  -p 3000:3000 \
+  -e PORT=3000 \
+  -e "DATABASE_URL=postgresql://postgres:password@db:5432/postgres?schema=public" \
+  --rm ghcr.io/himenon/prisma-practice
+
+# http://localhost:3000/get/all
+```
+
 ## Release
 
 1. Merge `main` branch
