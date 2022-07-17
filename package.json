@@ -8,7 +8,6 @@
     "nodejs",
     "esmodule"
   ],
-  "type": "module",
   "homepage": "https://github.com/Himenon/template-esm-nodejs-server#readme",
   "bugs": {
     "url": "https://github.com/Himenon/template-esm-nodejs-server/issues"
@@ -24,6 +23,7 @@
     "url": "https://github.com/Himenon"
   },
   "sideEffects": false,
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -46,6 +46,7 @@
   ],
   "scripts": {
     "start": "node ./dist/server.cjs",
+    "prepare": "simple-git-hooks",
     "build": "webpack",
     "develop": "pnpm run ts:esm ./src/entry.ts",
     "clean": "pnpm ts ./scripts/clean.ts",

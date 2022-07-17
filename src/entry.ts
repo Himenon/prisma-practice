@@ -16,10 +16,10 @@ const createApp = () => {
     const users = await prisma.user.findMany({
       where: {
         email: {
-          endsWith: "prisma.io"
+          endsWith: "prisma.io",
         },
       },
-    })
+    });
     const posts = await prisma.post.findMany();
     res.json({ users, posts });
     res.end();
@@ -41,7 +41,7 @@ const createApp = () => {
           },
         },
       },
-    })
+    });
     res.json({ record });
     res.end();
   });
@@ -59,7 +59,7 @@ const createApp = () => {
       include: {
         posts: true,
       },
-    })
+    });
     res.json({ record });
     res.end();
   });

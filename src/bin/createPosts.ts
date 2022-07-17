@@ -12,11 +12,11 @@ async function main() {
         email: "yewande@prisma.io",
       },
     },
-  }
+  };
 
   const posts = await prisma.post.create({
     data,
-  })
+  });
   console.dir(posts, { depth: null });
 }
 

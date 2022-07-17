@@ -4,7 +4,7 @@
 docker run -e PORT=5000 -p 5000:5000 --rm ghcr.io/himenon/prisma-practice
 ```
 
-## Setup
+## Install Prisma
 
 ```bash
 pnpm add prisma
@@ -25,13 +25,18 @@ See: <https://www.prisma.io/docs/concepts/components/prisma-migrate>
 # Create a migration from changes in Prisma schema, apply it to the database trigger generators (e.g. Prisma Client)
 pnpm dlx prisma migrate dev
 
-
 # !!!! DANGER !!!!
 # Run Migration
 pnpm dlx prisma migrate deploy
 ```
 
 ## Development
+
+Run PostgreSQL
+
+```bash
+docker compose up -d
+```
 
 Watch
 
