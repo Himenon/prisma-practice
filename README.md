@@ -8,7 +8,12 @@ docker run -e PORT=5000 -p 5000:5000 --rm ghcr.io/himenon/prisma-practice
 
 ```bash
 pnpm add prisma
+
+# Create schema.prisma in `prisma` directory
 pnpm dlx prisma init
+
+# Create Prisma Clent Code
+pnpm dlx prisma
 ```
 
 ## Development
