@@ -12,10 +12,55 @@ process.on("unhandledRejection", error => {
 const createApp = () => {
   const app = express();
 
-  app.get("/", async (req: express.Request, res: express.Response) => {
-    const users = await prisma.user.findMany()
+  app.get("/get/all", async (req: express.Request, res: express.Response) => {
+    const users = await prisma.user.findMany({
+      where: {
+        email: {
+          endsWith: "prisma.io"
+        },
+      },
+    })
     const posts = await prisma.post.findMany();
     res.json({ users, posts });
+    res.end();
+  });
+
+  /**
+   * @see https://www.prisma.io/docs/concepts/components/prisma-client/crud#select-a-subset-of-related-record-fields
+   */
+  app.get("/get/select/subset", async (req: express.Request, res: express.Response) => {
+    const record = await prisma.user.findUnique({
+      where: {
+        email: "yewande@prisma.io",
+      },
+      select: {
+        email: true,
+        posts: {
+          select: {
+            title: true,
+          },
+        },
+      },
+    })
+    res.json({ record });
+    res.end();
+  });
+
+  /**
+   * @see https://www.prisma.io/docs/concepts/components/prisma-client/crud#include-related-records
+   */
+  app.get("/get/related/records", async (req: express.Request, res: express.Response) => {
+    const record = await prisma.user.findMany({
+      where: {
+        id: {
+          gt: 2,
+        },
+      },
+      include: {
+        posts: true,
+      },
+    })
+    res.json({ record });
     res.end();
   });
 
