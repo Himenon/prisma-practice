@@ -1,7 +1,13 @@
-# @himenon/template-esm-nodejs-server
+# @himenon/prisma-practice
 
 ```bash
-docker run -e PORT=5000 -p 5000:5000 --rm ghcr.io/himenon/template-esm-nodejs-server
+docker run -e PORT=5000 -p 5000:5000 --rm ghcr.io/himenon/prisma-practice
+```
+
+## Setup
+
+```bash
+pnpm add prisma
 ```
 
 ## Development
@@ -16,7 +22,7 @@ Build Step
 
 ```bash
 $ pnpm run build
-$ docker build --no-cache -t ghcr.io/himenon/template-esm-nodejs-server .
+$ docker build --no-cache -t ghcr.io/himenon/prisma-practice .
 ```
 
 ## Release
@@ -28,4 +34,4 @@ $ docker build --no-cache -t ghcr.io/himenon/template-esm-nodejs-server .
 
 ## LICENCE
 
-[@Himenon/template-esm-nodejs-server](https://github.com/Himenon/template-esm-nodejs-server)・MIT
+[@Himenon/prisma-practice](https://github.com/Himenon/prisma-practice)・MIT
