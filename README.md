@@ -14,6 +14,21 @@ pnpm dlx prisma init
 
 # Create Prisma Clent Code
 pnpm dlx prisma generate
+# After, Please restart TSServer (vscode).
+```
+
+## Migration
+
+See: <https://www.prisma.io/docs/concepts/components/prisma-migrate>
+
+```bash
+# Create a migration from changes in Prisma schema, apply it to the database trigger generators (e.g. Prisma Client)
+pnpm dlx prisma migrate dev
+
+
+# !!!! DANGER !!!!
+# Run Migration
+pnpm dlx prisma migrate deploy 
 ```
 
 ## Development
