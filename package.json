@@ -8,6 +8,7 @@
     "nodejs",
     "esmodule"
   ],
+  "type": "module",
   "homepage": "https://github.com/Himenon/template-esm-nodejs-server#readme",
   "bugs": {
     "url": "https://github.com/Himenon/template-esm-nodejs-server/issues"
