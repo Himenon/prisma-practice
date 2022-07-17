@@ -28,7 +28,7 @@ pnpm dlx prisma migrate dev
 
 # !!!! DANGER !!!!
 # Run Migration
-pnpm dlx prisma migrate deploy 
+pnpm dlx prisma migrate deploy
 ```
 
 ## Development
