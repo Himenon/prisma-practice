@@ -102,6 +102,6 @@ const init = async () => {
 
 init().catch(error => {
   console.error(error);
-  prisma.$disconnect();
   process.exitCode = 1;
+  prisma.$disconnect();
 });

@@ -1,12 +1,16 @@
-FROM node:18-alpine3.14
+FROM node:16
 
-RUN apk upgrade --update-cache --available && \
-    apk add openssl && \
-    rm -rf /var/cache/apk/*
+RUN npm i -g pnpm
 
-COPY prisma/schema.prisma /server/dist/schema.prisma
-COPY dist/server.cjs /server/dist/server.cjs
+WORKDIR /app
 
-WORKDIR /server
+COPY . /app/
+
+RUN pnpm i --frozen-lockfile
+RUN pnpm dlx prisma generate
+RUN pnpm build
+
+RUN ls -la
+RUN ls ./dist
 
 CMD ["node", "dist/server.cjs"]
