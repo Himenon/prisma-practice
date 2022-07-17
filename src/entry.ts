@@ -1,4 +1,7 @@
+import Prisma from "@prisma/client";
 import express from "express";
+
+const prisma = new Prisma.PrismaClient();
 
 const PORT = process.env.PORT || 3000;
 
@@ -9,9 +12,10 @@ process.on("unhandledRejection", error => {
 const createApp = () => {
   const app = express();
 
-  app.get("*", (req: express.Request, res: express.Response) => {
-    console.log(`req = ${req.url}`);
-    res.json({ query: (req as any).query });
+  app.get("/", async (req: express.Request, res: express.Response) => {
+    const users = await prisma.user.findMany()
+    const posts = await prisma.post.findMany();
+    res.json({ users, posts });
     res.end();
   });
 
