@@ -63,6 +63,17 @@ docker run \
 # http://localhost:3000/get/all
 ```
 
+## Optimize Docker Image Size
+
+**Base Image**: node:16 / 853MB
+
+| Type                       | Docker Image Tag                      | Docker Image Size |   Diff |
+| :------------------------- | :------------------------------------ | ----------------: | -----: |
+| Include All node_modules   | ghcr.io/himenon/prisma-practice:1.0.2 |            1.47GB | +617MB |
+| Only required node_modules | ghcr.io/himenon/prisma-practice:1.0.3 |             960MB | +107MB |
+
+**Base Image**: gcr.io/distroless/nodejs / 105MB
+
 ## Release
 
 1. Merge `main` branch
