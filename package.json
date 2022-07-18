@@ -46,7 +46,8 @@
   ],
   "scripts": {
     "start": "node ./dist/server.cjs",
-    "build": "webpack",
+    "prebuild": "prisma generate",
+    "build": "run-s prebuild && webpack",
     "develop": "pnpm run ts:esm ./src/entry.ts",
     "clean": "pnpm ts ./scripts/clean.ts",
     "ts:esm": "node --loader ts-node/esm --experimental-specifier-resolution=node",
