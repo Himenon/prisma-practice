@@ -19,11 +19,11 @@ const createConfig = () => {
     devtool: "inline-source-map",
     experiments: {
       topLevelAwait: true,
-      outputModule: true,
+      // outputModule: true,
     },
     output: {
       path: path.join(cwd, "dist"),
-      filename: "[name].mjs",
+      filename: "[name].cjs",
       clean: true,
     },
     optimization: {
@@ -37,6 +37,10 @@ const createConfig = () => {
     ],
     module: {
       rules: [
+        {
+          test: /\.node$/,
+          loader: "node-loader",
+        },
         {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
           exclude: /node_modules/,
