@@ -38,4 +38,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/himenon/template-esm-nodejs-server:latest,ghcr.io/himenon/template-esm-nodejs-server:${{ steps.vars.outputs.docker_tag }}
+          tags: ghcr.io/himenon/prisma-practice:latest,ghcr.io/himenon/prisma-practice:${{ steps.vars.outputs.docker_tag }}

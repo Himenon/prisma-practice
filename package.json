@@ -1,5 +1,5 @@
 {
-  "name": "@himenon/template-esm-nodejs-server",
+  "name": "@himenon/prisma-practice",
   "version": "1.0.0",
   "description": "Template repository for nodejs server",
   "keywords": [
@@ -8,13 +8,13 @@
     "nodejs",
     "esmodule"
   ],
-  "homepage": "https://github.com/Himenon/template-esm-nodejs-server#readme",
+  "homepage": "https://github.com/Himenon/prisma-practice#readme",
   "bugs": {
-    "url": "https://github.com/Himenon/template-esm-nodejs-server/issues"
+    "url": "https://github.com/Himenon/prisma-practice/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Himenon/template-esm-nodejs-server.git"
+    "url": "git@github.com:Himenon/prisma-practice.git"
   },
   "license": "MIT",
   "author": {
