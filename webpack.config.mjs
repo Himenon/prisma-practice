@@ -38,6 +38,10 @@ const createConfig = () => {
     module: {
       rules: [
         {
+          test: /\.node$/,
+          loader: "node-loader",
+        },
+        {
           test: /\.(js|mjs|jsx|ts|tsx)$/,
           exclude: /node_modules/,
           use: {
