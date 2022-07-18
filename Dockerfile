@@ -13,7 +13,6 @@ COPY tsconfig.json /app/
 COPY .npmrc /app/
 
 RUN pnpm i --frozen-lockfile
-RUN pnpm dlx prisma generate
 RUN pnpm build
 RUN pnpm i --production
 
