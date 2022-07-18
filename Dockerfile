@@ -1,4 +1,4 @@
-FROM node:16 AS INSTALLER
+FROM node:16-slim AS INSTALLER
 
 RUN npm i -g pnpm
 
@@ -9,7 +9,7 @@ COPY . /app/
 RUN pnpm i --frozen-lockfile
 RUN pnpm build
 
-FROM node:16
+FROM gcr.io/distroless/nodejs:16
 
 WORKDIR /app
 
