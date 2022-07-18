@@ -46,7 +46,6 @@
   ],
   "scripts": {
     "start": "node ./dist/server.cjs",
-    "prepare": "simple-git-hooks",
     "build": "webpack",
     "develop": "pnpm run ts:esm ./src/entry.ts",
     "clean": "pnpm ts ./scripts/clean.ts",
@@ -60,7 +59,6 @@
     "prettier:validate": "prettier --check \"**/*.{js,jsx,ts,tsx,json,yml,yaml,md,html}\"",
     "eslint:format": "eslint \"**/*.{ts,tsx}\" --fix",
     "eslint:validate": "eslint \"**/*.{ts,tsx}\"",
-    "postinstall": "prisma generate",
     "watch": "nodemon"
   },
   "simple-git-hooks": {
