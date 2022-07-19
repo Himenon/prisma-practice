@@ -74,6 +74,21 @@ docker run \
 
 **Base Image**: gcr.io/distroless/nodejs / 105MB
 
+| Type                       | Docker Image Tag                      | Docker Image Size |   Diff |
+| :------------------------- | :------------------------------------ | ----------------: | -----: |
+| Only required node_modules | ghcr.io/himenon/prisma-practice:1.0.4 |             208MB | +107MB |
+
+### Technique
+
+```prisma
+generator client {
+  provider = "prisma-client-js"
+  // Output Generated Prisma Client in node_modules top level directory
+  output   = "../node_modules/@generated-prisma-client"
+  binaryTargets = ["native", "linux-musl"]
+}
+```
+
 ## Release
 
 1. Merge `main` branch
